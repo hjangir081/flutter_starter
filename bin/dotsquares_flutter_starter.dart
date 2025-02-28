@@ -50,5 +50,43 @@ void main(List<String> arguments) async {
     print('Created folder: $libPath/$folder');
   }
 
+  // Add dependencies to pubspec.yaml
+  addDependencies(projectName);
+
+  // Run flutter pub get to install dependencies
+  runFlutterPubGet(projectName);
+
   print('Project setup complete!');
+}
+
+void addDependencies(String projectPath) {
+  // Path to the pubspec.yaml file
+  var pubspecPath = '$projectPath/pubspec.yaml';
+
+  // Read the existing pubspec.yaml content
+  var pubspecFile = File(pubspecPath);
+  var pubspecContent = pubspecFile.readAsStringSync();
+
+  // Add necessary dependencies
+  if (!pubspecContent.contains('dotsquares_flutter_starter')) {
+    pubspecContent = pubspecContent.replaceFirst(
+        'dependencies:',
+        '''
+dependencies:
+  dotsquares_flutter_starter: ^1.0.0
+'''
+    );
+    pubspecFile.writeAsStringSync(pubspecContent);
+    print('Added dotsquares_flutter_starter to pubspec.yaml');
+  }
+}
+
+void runFlutterPubGet(String projectPath) async {
+  var result = await Process.run('flutter', ['pub', 'get'], workingDirectory: projectPath);
+  if (result.exitCode == 0) {
+    print('Dependencies installed successfully.');
+  } else {
+    print('Failed to install dependencies.');
+    print(result.stderr);
+  }
 }
