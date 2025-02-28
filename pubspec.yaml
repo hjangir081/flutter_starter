@@ -8,7 +8,7 @@ environment:
 
 
 executables:
-  dotsquares_flutter_starter: dotsquares_flutter_starter.dart
+  dotsquares_flutter_starter: bin/dotsquares_flutter_starter.dart
 
 
 dependencies:
