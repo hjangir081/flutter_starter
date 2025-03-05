@@ -154,13 +154,13 @@ void addDependencies(String projectPath) {
   }
 
   if (!pubspecContent.contains('retrofit_generator:')) {
-    pubspecContent += '  retrofit_generator:\n';
+    pubspecContent = pubspecContent.replaceFirst('dev_dependencies:', 'dev_dependencies:\n  retrofit_generator: ');
   }
   if (!pubspecContent.contains('build_runner:')) {
-    pubspecContent += '  build_runner:\n';
+    pubspecContent = pubspecContent.replaceFirst('dev_dependencies:', 'dev_dependencies:\n  build_runner: ');
   }
   if (!pubspecContent.contains('json_serializable:')) {
-    pubspecContent += '  json_serializable:\n';
+    pubspecContent = pubspecContent.replaceFirst('dev_dependencies:', 'dev_dependencies:\n  json_serializable: ');
   }
 
   pubspecFile.writeAsStringSync(pubspecContent);
