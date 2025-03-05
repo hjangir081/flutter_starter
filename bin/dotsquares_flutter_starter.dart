@@ -59,6 +59,35 @@ void main(List<String> arguments) async {
   print('Project setup complete!');
 }
 
+// Create the apiEnvironment.dart file inside utils/constants/
+createApiEnvironmentFile('$libPath/utils/constants/apiEnvironment.dart');
+
+// Add dependencies to pubspec.yaml
+addDependencies(projectName);
+
+// Run flutter pub get to install dependencies
+runFlutterPubGet(projectName);
+
+print('Project setup complete!');
+}
+
+void createApiEnvironmentFile(String filePath) {
+File apiFile = File(filePath);
+
+if (!apiFile.existsSync()) {
+apiFile.writeAsStringSync('''
+class ApiEnvironment {
+  // Define API configurations here
+  static const baseUrl = ""; // Add your base URL here
+  static const apiPrefix = ""; // Add your API prefix here
+  // End Points
+  static const login='login'; // Add your endpoints here
+}
+''');
+print('Created file: $filePath');
+}
+}
+
 void addDependencies(String projectPath) {
   // Path to the pubspec.yaml file
   var pubspecPath = '$projectPath/pubspec.yaml';
