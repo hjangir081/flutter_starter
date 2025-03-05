@@ -21,10 +21,8 @@ void main(List<String> arguments) async {
 
   String libPath = '$projectName/lib/src';
   List<String> folders = [
-    'data/datasource'
-    'data/datasource/remote',
-    'data/datasource/local',
-    'data/repositories'
+    'data/datasources/remote',
+    'data/datasources/local',
     'data/repositories/base',
     'domain/models',
     'domain/repositories',
@@ -46,7 +44,7 @@ void main(List<String> arguments) async {
   createApiEnvironmentFile('$libPath/utils/constants/apiEnvironment.dart');
   createDataStateFile('$libPath/utils/resources/data_state.dart');
   createApiRepositoryFile('$libPath/domain/repositories/api_repositories.dart');
-  createApiServiceFile('$libPath/data/datasource/remote/api_service.dart');
+  createApiServiceFile('$libPath/data/datasources/remote/api_service.dart');
   createBaseApiRepositoryFile('$libPath/data/repositories/base/base_api_repository.dart');
 
   addDependencies(projectName);
