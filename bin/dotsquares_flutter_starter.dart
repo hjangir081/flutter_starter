@@ -62,9 +62,6 @@ void main(List<String> arguments) async {
 // Create the apiEnvironment.dart file inside utils/constants/
 createApiEnvironmentFile('$libPath/utils/constants/apiEnvironment.dart');
 
-// Add dependencies to pubspec.yaml
-addDependencies(projectName);
-
 print('Project setup complete!');
 }
 
