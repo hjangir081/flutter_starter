@@ -65,9 +65,6 @@ createApiEnvironmentFile('$libPath/utils/constants/apiEnvironment.dart');
 // Add dependencies to pubspec.yaml
 addDependencies(projectName);
 
-// Run flutter pub get to install dependencies
-runFlutterPubGet(projectName);
-
 print('Project setup complete!');
 }
 
