@@ -50,36 +50,34 @@ void main(List<String> arguments) async {
     print('Created folder: $libPath/$folder');
   }
 
+  // Create apiEnvironment.dart file
+  createApiEnvironmentFile('$libPath/utils/constants/apiEnvironment.dart');
+
   // Add dependencies to pubspec.yaml
   addDependencies(projectName);
 
   // Run flutter pub get to install dependencies
-  runFlutterPubGet(projectName);
+  await runFlutterPubGet(projectName);
 
   print('Project setup complete!');
 }
 
-// Create the apiEnvironment.dart file inside utils/constants/
-createApiEnvironmentFile('$libPath/utils/constants/apiEnvironment.dart');
-
-print('Project setup complete!');
-}
-
+// Function to create apiEnvironment.dart
 void createApiEnvironmentFile(String filePath) {
-File apiFile = File(filePath);
+  File apiFile = File(filePath);
 
-if (!apiFile.existsSync()) {
-apiFile.writeAsStringSync('''
+  if (!apiFile.existsSync()) {
+    apiFile.writeAsStringSync('''
 class ApiEnvironment {
   // Define API configurations here
   static const baseUrl = ""; // Add your base URL here
   static const apiPrefix = ""; // Add your API prefix here
   // End Points
-  static const login='login'; // Add your endpoints here
+  static const login = 'login'; // Add your endpoints here
 }
 ''');
-print('Created file: $filePath');
-}
+    print('Created file: $filePath');
+  }
 }
 
 void addDependencies(String projectPath) {
@@ -93,18 +91,18 @@ void addDependencies(String projectPath) {
   // Add necessary dependencies
   if (!pubspecContent.contains('dotsquares_flutter_starter')) {
     pubspecContent = pubspecContent.replaceFirst(
-        'dependencies:',
-        '''
+      'dependencies:',
+      '''
 dependencies:
   dotsquares_flutter_starter: ^1.0.0
-'''
+''',
     );
     pubspecFile.writeAsStringSync(pubspecContent);
     print('Added dotsquares_flutter_starter to pubspec.yaml');
   }
 }
 
-void runFlutterPubGet(String projectPath) async {
+Future<void> runFlutterPubGet(String projectPath) async {
   var result = await Process.run('flutter', ['pub', 'get'], workingDirectory: projectPath);
   if (result.exitCode == 0) {
     print('Dependencies installed successfully.');
