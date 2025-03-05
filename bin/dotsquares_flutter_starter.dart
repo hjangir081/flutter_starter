@@ -21,8 +21,10 @@ void main(List<String> arguments) async {
 
   String libPath = '$projectName/lib/src';
   List<String> folders = [
+    'data/datasource'
     'data/datasource/remote',
-    'data/dataSources/local',
+    'data/datasource/local',
+    'data/repositories'
     'data/repositories/base',
     'domain/models',
     'domain/repositories',
