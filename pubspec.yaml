@@ -1,6 +1,6 @@
 name: dotsquares_flutter_starter
 description: Flutter Folder Architecture is a pre-built, scalable, and organized folder structure package designed to streamline your Flutter project setup. This package provides a well-defined architecture that follows best practices, ensuring clean code separation, maintainability, and scalability for your Flutter applications.
-version: 1.0.2
+version: 1.0.3
 repository: https://github.com/hjangir081/flutter_starter.git
 
 environment:
