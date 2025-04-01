@@ -10,6 +10,9 @@ A Dart-based CLI tool that creates a Flutter project with a predefined folder st
 ## 🚀 Installation
 
 Install the CLI globally using:
+Install the Package using:
 
 ```sh
 dart pub global activate flutter_starter_cli
+dotsquares_flutter_starter {'Your app name'}
+

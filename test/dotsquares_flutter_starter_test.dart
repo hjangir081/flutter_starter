@@ -1,4 +1,4 @@
-import 'package:dotsquares_flutter_starter/dotsquares_flutter_starter.dart';
+import 'package:clean_architecture_init/clean_architecture_init.dart';
 import 'package:test/test.dart';
 
 void main() {

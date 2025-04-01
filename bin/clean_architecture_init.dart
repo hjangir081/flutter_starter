@@ -1,7 +1,7 @@
 import 'dart:io';
 
 void main(List<String> arguments) async {
-  print('dotsquares_flutter_starter is working!');
+  print('clean_architecture_init is working!');
 
   if (arguments.isEmpty) {
     print('Usage: flutter_starter <project_name>');

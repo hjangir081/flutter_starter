@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/dotsquares_flutter_starter.iml" filepath="$PROJECT_DIR$/.idea/dotsquares_flutter_starter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/clean_architecture_init.iml" filepath="$PROJECT_DIR$/.idea/clean_architecture_init.iml" />
     </modules>
   </component>
 </project>
